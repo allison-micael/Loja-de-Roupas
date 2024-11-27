@@ -1,0 +1,54 @@
+class ShoppingCart: 
+    def __init__(self): 
+        self.items = {}
+
+    def add_item(self, name, price, quantity=1): 
+        """Adds an item to the cart."""
+        if name in self.items: 
+            self.items[name]["quantity"] += quantity
+            print(f"{quantity} unit(s) of {name} added to the cart.")
+        else: 
+            self.items[name] = {"price": price, "quantity": quantity}
+            print(f"{quantity} unit(s) of {name} added to the cart.")
+
+    def remove_item(self, name, quantity=1): 
+        """Removes a quantity of an item from the cart."""
+        if name in self.items: 
+            if quantity >= self.items[name]["quantity"]: 
+                del self.items[name]
+                print(f"All items of {name} were removed from the cart.")
+            else: 
+                self.items[name]["quantity"] -= quantity
+                print(f"{quantity} unit(s) of {name} removed from the cart.")
+        else: 
+            print(f"The item {name} is not in the cart.")
+
+    def display_cart(self): 
+        """Displays the items in the cart."""
+        if not self.items: 
+            print("The cart is empty.")
+            return
+        print("\nItems in the cart: ")
+        total = 0
+        for name, item in self.items.items(): 
+            print(f"- {name} | Quantity:  {item['quantity']} | Price per unit:  R${item['price']: .2f}")
+            total += item["price"] * item["quantity"]
+        print(f"Total:  R${total: .2f}\n")
+
+    def calculate_total(self): 
+        """Calculates the total of the cart."""
+        return sum(item["price"] * item["quantity"] for item in self.items.values())
+
+
+# Example usage
+cart = ShoppingCart()
+cart.add_item("Shirt",  50.00,  2)
+cart.add_item("Pants",  120.00)
+cart.add_item("Shirt",  50.00)  # Adds more shirts
+cart.display_cart()
+
+cart.remove_item("Shirt",  1)
+cart.display_cart()
+
+cart.remove_item("Pants",  1)
+cart.display_cart()
