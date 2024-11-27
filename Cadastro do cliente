@@ -1,0 +1,30 @@
+class Cliente: 
+    def __init__(self,  nome,  telefone,  cpf,  email,  endereco): 
+        """Inicializa os dados do cliente."""
+        self.nome = nome
+        self.telefone = telefone
+        self.cpf = cpf
+        self.email = email
+        self.endereco = endereco
+
+    def exibir_dados(self): 
+        """Exibe os dados do cliente."""
+        return (f"Nome:  {self.nome}\n"
+                f"Telefone:  {self.telefone}\n"
+                f"CPF:  {self.cpf}\n"
+                f"E-mail:  {self.email}\n"
+                f"Endereço:  {self.endereco}")
+
+
+# Cadastro do cliente de exemplo
+cliente_alyson = Cliente(
+    nome="Allison", 
+    telefone="4199644648", 
+    cpf="11607161966", 
+    email="allison.silva027@gmail.com", 
+    endereco="Rua Ezidio Neves,  sem número,  Cidade Doutor Ulysses,  Paraná,  Bairro Cerrado"
+)
+
+# Exibindo os dados do cliente
+print("Cadastro do Cliente: ")
+print(cliente_alyson.exibir_dados())
