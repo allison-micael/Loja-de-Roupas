@@ -1,0 +1,62 @@
+class Pagamento: 
+    def __init__(self, total_compra): 
+        self.total_compra = total_compra
+
+    def exibir_opcoes_pagamento(self): 
+        print("\nFormas de pagamento disponiveis: ")
+        print("1. Cartao de credito (parcelado em ate 3x sem juros)")
+        print("2. Cartao de debito")
+        print("3. PIX (10% de desconto)")
+        print("4. Boleto bancario (5% de desconto)")
+
+    def calcular_pagamento(self, opcao_pagamento, parcelas=1): 
+        if opcao_pagamento == 1:   # Cartao de credito
+            if parcelas > 3: 
+                print("Erro:  O numero maximo de parcelas é 3.")
+                return None
+            valor_parcela = self.total_compra / parcelas
+            print(f"\nPagamento em {parcelas}x no cartao de credito.")
+            print(f"Valor de cada parcela:  R${valor_parcela:.2f}")
+            return self.total_compra
+
+        elif opcao_pagamento == 2:   # Cartao de debito
+            print("\nPagamento realizado com cartao de debito.")
+            return self.total_compra
+
+        elif opcao_pagamento == 3:   # PIX
+            desconto = self.total_compra * 0.10
+            valor_final = self.total_compra - desconto
+            print("\nPagamento realizado via PIX.")
+            print(f"Desconto aplicado:  R${desconto:.2f}")
+            return valor_final
+
+        elif opcao_pagamento == 4:   # Boleto bancario
+            desconto = self.total_compra * 0.05
+            valor_final = self.total_compra - desconto
+            print("\nPagamento realizado via boleto bancario.")
+            print(f"Desconto aplicado:  R${desconto:.2f}")
+            return valor_final
+
+        else: 
+            print("Erro:  Opção de pagamento inválida.")
+            return None
+
+
+# Exemplo de uso
+valor_compra = 500.00  # Valor total da compra
+pagamento = Pagamento(valor_compra)
+
+print(f"Valor total da compra:  R${valor_compra:.2f}")
+pagamento.exibir_opcoes_pagamento()
+
+# Simular escolha do cliente
+opcao = int(input("\nEscolha a forma de pagamento (1-4):  "))
+
+if opcao == 1: 
+    parcelas = int(input("Escolha o número de parcelas (1-3):  "))
+    valor_final = pagamento.calcular_pagamento(opcao, parcelas)
+else: 
+    valor_final = pagamento.calcular_pagamento(opcao)
+
+if valor_final is not None: 
+    print(f"\nValor final a ser pago:  R${valor_final:.2f}")
