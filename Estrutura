@@ -1,0 +1,11 @@
+loja-de-roupas-online/
+├── frontend/
+│   ├── index.html       # Página inicial
+│   ├── styles.css       # Estilo da aplicação
+│   ├── script.js        # Lógica de interação no frontend
+├── backend/
+│   ├── server.js        # Servidor backend
+│   ├── routes.js        # Rotas para API
+│   ├── database.js      # Conexão com o banco de dados
+├── README.md            # Documentação principal
+├── DOCUMENTATION.md     # Documentação do processo
