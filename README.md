@@ -1,4 +1,4 @@
-# Loja de Roupas online Veste bem
+# Bem Vindo a nossa Loja de Roupas online Veste bem
 Este projeto é uma aplicação online simples de uma loja de roupas. Ele permite que os usuários naveguem pelos produtos, visualizem detalhes, adicionem itens ao carrinho e realizem pedidos tudo pelo seu aparelho.
 
 ## Objetivos do Projeto
