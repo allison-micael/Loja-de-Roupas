@@ -2,7 +2,7 @@
 Este projeto é uma aplicação online simples de uma loja de roupas. Ele permite que os usuários naveguem pelos produtos, visualizem detalhes, adicionem itens ao carrinho e realizem pedidos tudo pelo seu aparelho.
 
 ## Objetivos do Projeto
-- •	Fornecer referência no mercado de moda online: a Veste Bem é conhecida por seu extenso catálogo, excelência do atendimento e inovações ao comércio eletrônico; •	Permanecer a maior loja com o maior catálogo de moda por expansão seguindo as tendências atuais, bem como as necessidades do cliente Seu objetivo principal é de fato uma comprimento da experiência acessível, prático e agradável ao consumidor que procura roupas de alta qualidade para qualquer ocasião..
+-	Fornecer referência no mercado de moda online: a Veste Bem é conhecida por seu extenso catálogo, excelência do atendimento e inovações ao comércio eletrônico; •	Permanecer a maior loja com o maior catálogo de moda por expansão seguindo as tendências atuais, bem como as necessidades do cliente Seu objetivo principal é de fato uma comprimento da experiência acessível, prático e agradável ao consumidor que procura roupas de alta qualidade para qualquer ocasião..
 
 ## Funcionalidades
 - [ ] Visualizar produtos disponíveis.
