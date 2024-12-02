@@ -25,3 +25,9 @@ Este projeto é uma aplicação web simples de uma loja de roupas. Ele permite q
 - *Semana 2:* Implementação da interface do usuário (frontend).
 - *Semana 3:* Desenvolvimento do backend e integração com o frontend
 - *Semana 4:* Alguns ajustes e Testes
+
+## Contato
+Instagram:@lojavestebem
+Facebook:Loja Veste bem oficial
+Email:lojavestebemonline@gmail.com
+WhatsApp:(41)996446048
