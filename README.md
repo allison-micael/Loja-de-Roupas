@@ -1,11 +1,8 @@
 # Loja de Roupas online Veste bem
-Este projeto é uma aplicação web simples de uma loja de roupas. Ele permite que os usuários naveguem pelos produtos, visualizem detalhes, adicionem itens ao carrinho e realizem pedidos.
+Este projeto é uma aplicação online simples de uma loja de roupas. Ele permite que os usuários naveguem pelos produtos, visualizem detalhes, adicionem itens ao carrinho e realizem pedidos tudo pelo seu aparelho.
 
 ## Objetivos do Projeto
-- Desenvolver uma loja virtual básica como prática de desenvolvimento full-stack.
-- Implementar uma interface interativa para os usuários.
-- Criar um backend simples para gerenciar produtos, carrinho e pedidos.
-- Praticar o uso de Git para controle de versão e colaboração.
+- •	Fornecer referência no mercado de moda online: a Veste Bem é conhecida por seu extenso catálogo, excelência do atendimento e inovações ao comércio eletrônico; •	Permanecer a maior loja com o maior catálogo de moda por expansão seguindo as tendências atuais, bem como as necessidades do cliente Seu objetivo principal é de fato uma comprimento da experiência acessível, prático e agradável ao consumidor que procura roupas de alta qualidade para qualquer ocasião..
 
 ## Funcionalidades
 - [ ] Visualizar produtos disponíveis.
@@ -15,10 +12,8 @@ Este projeto é uma aplicação web simples de uma loja de roupas. Ele permite q
 - [ ] (Opcional) Sistema de login para clientes.
 
 ## Tecnologias Utilizadas
-- *Frontend*: HTML, CSS, JavaScript.
-- *Backend*: Node.js (ou outra tecnologia à sua escolha).
-- *Banco de Dados*: SQLite ou MongoDB.
-- *Controle de Versão*: Git/GitHub.
+- Python
+- Controle de Versão*: Git/GitHub.
 
 ## Cronograma de Desenvolvimento
 - *Semana 1:* Planejamento, configuração do repositório e protótipo de design.
