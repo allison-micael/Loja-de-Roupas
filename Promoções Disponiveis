@@ -1,0 +1,79 @@
+# Sistema de promoções da loja Veste Bem
+
+# Dados da loja com promoções
+produtos = [
+    {"categoria": "Infantis", "nome": "Camiseta Infantil", "preco": 29.90, "promocao": None},
+    {"categoria": "Infantis", "nome": "Vestido Infantil", "preco": 49.90, "promocao": 10},  # 10% de desconto
+    {"categoria": "Masculinas", "nome": "Camiseta Masculina", "preco": 39.90, "promocao": 15},  # 15% de desconto
+    {"categoria": "Masculinas", "nome": "Calça Jeans Masculina", "preco": 79.90, "promocao": None},
+    {"categoria": "Femininas", "nome": "Blusa Feminina", "preco": 44.90, "promocao": 20},  # 20% de desconto
+    {"categoria": "Femininas", "nome": "Vestido Feminino", "preco": 89.90, "promocao": None},
+]
+
+# Funções do sistema
+def exibir_promocoes():
+    print("\n=== Produtos em Promoção ===")
+    encontrou_promocao = False
+    for produto in produtos:
+        if produto["promocao"]:
+            encontrou_promocao = True
+            desconto = produto["promocao"]
+            preco_original = produto["preco"]
+            preco_promocional = preco_original * (1 - desconto / 100)
+            print(f"{produto['nome']} ({produto['categoria']})")
+            print(f"- Preço Original: R$ {preco_original:.2f}")
+            print(f"- Desconto: {desconto}%")
+            print(f"- Preço Promocional: R$ {preco_promocional:.2f}\n")
+    if not encontrou_promocao:
+        print("Nenhum produto em promoção no momento.")
+
+def adicionar_promocao(nome_produto, desconto):
+    for produto in produtos:
+        if produto["nome"].lower() == nome_produto.lower():
+            produto["promocao"] = desconto
+            print(f"\nPromoção adicionada: {produto['nome']} agora com {desconto}% de desconto!")
+            return
+    print("\nProduto não encontrado. Tente novamente.")
+
+def remover_promocao(nome_produto):
+    for produto in produtos:
+        if produto["nome"].lower() == nome_produto.lower() and produto["promocao"]:
+            produto["promocao"] = None
+            print(f"\nPromoção removida: {produto['nome']} não está mais com desconto.")
+            return
+    print("\nProduto não encontrado ou não possui promoção ativa.")
+
+# Sistema principal
+while True:
+    print("\n=== Sistema de Promoções - Loja Veste Bem ===")
+    print("1. Ver produtos em promoção")
+    print("2. Adicionar promoção a um produto")
+    print("3. Remover promoção de um produto")
+    print("4. Sair")
+
+    opcao = input("\nEscolha uma opção: ")
+
+    if opcao == "1":
+        exibir_promocoes()
+
+    elif opcao == "2":
+        nome_produto = input("\nDigite o nome do produto para adicionar a promoção: ")
+        try:
+            desconto = float(input("Digite o percentual de desconto (ex.: 10 para 10%): "))
+            if desconto > 0:
+                adicionar_promocao(nome_produto, desconto)
+            else:
+                print("\nO desconto deve ser maior que zero.")
+        except ValueError:
+            print("\nValor inválido para o desconto.")
+
+    elif opcao == "3":
+        nome_produto = input("\nDigite o nome do produto para remover a promoção: ")
+        remover_promocao(nome_produto)
+
+    elif opcao == "4":
+        print("\nObrigado por usar o sistema de promoções da Loja Veste Bem!")
+        break
+
+    else:
+        print("\nOpção inválida. Tente novamente.")
