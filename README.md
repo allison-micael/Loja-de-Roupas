@@ -1,7 +1,12 @@
 # Loja de Roupas online Veste bem
 Este projeto é uma aplicação online simples de uma loja de roupas. Ele permite que os usuários naveguem pelos produtos, visualizem detalhes, adicionem itens ao carrinho e realizem pedidos tudo pelo seu aparelho.
 
-* ⁠1. Qualidade: garantir que todos os produtos sejam de qualidade, design e durabilidade; 2. Diversos: ofertar ofertas para diferentes faixas de idade, tamanhos, e estilos; 3. Acessibilidade: fornecer os preços mais acessíveis e permitir o acesso às últimas tendências de moda; 4. Sustentabilidade: é tudo acerca do desenvolvimento responsabilidade e busimos fornecedores e materiais; 5   Satisfacao do Cliente nos cliente no centro de todas as decisões.
+## Mais Informações
+* ⁠1. Qualidade: garantir que todos os produtos sejam de qualidade, design e durabilidade;
+* 2. Diversos: ofertar ofertas para diferentes faixas de idade, tamanhos, e estilos;
+* 3. Acessibilidade: fornecer os preços mais acessíveis e permitir o acesso às últimas tendências de moda;
+* 4. Sustentabilidade: é tudo acerca do desenvolvimento responsabilidade e busimos fornecedores e materiais;
+* 5. Satisfacao do Cliente nos cliente no centro de todas as decisões.
 
 ## Objetivos do Projeto
 -	Fornecer referência no mercado de moda online: a Veste Bem é conhecida por seu extenso catálogo, excelência do atendimento e inovações ao comércio eletrônico.	Permanecer a maior loja com o maior catálogo de moda por expansão seguindo as tendências atuais, bem como as necessidades do cliente Seu objetivo principal é de fato uma comprimento da experiência acessível, prático e agradável ao consumidor que procura roupas de alta qualidade para qualquer ocasião..
