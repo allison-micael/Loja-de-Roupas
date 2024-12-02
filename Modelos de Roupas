@@ -1,0 +1,95 @@
+# Sistema básico de loja online de roupas
+
+# Dados da loja
+loja = {
+    "Infantis": [
+        {"nome": "Camiseta Infantil", "tamanho": "P/M/G", "preco": 29.90},
+        {"nome": "Vestido Infantil", "tamanho": "P/M/G", "preco": 49.90},
+        {"nome": "Short Infantil", "tamanho": "P/M/G", "preco": 34.90},
+    ],
+    "Masculinas": [
+        {"nome": "Camiseta Masculina", "tamanho": "P/M/G/GG", "preco": 39.90},
+        {"nome": "Calça Jeans Masculina", "tamanho": "38/40/42/44", "preco": 79.90},
+        {"nome": "Bermuda Masculina", "tamanho": "P/M/G/GG", "preco": 49.90},
+    ],
+    "Femininas": [
+        {"nome": "Blusa Feminina", "tamanho": "P/M/G/GG", "preco": 44.90},
+        {"nome": "Vestido Feminino", "tamanho": "P/M/G", "preco": 89.90},
+        {"nome": "Saia Feminina", "tamanho": "P/M/G", "preco": 59.90},
+    ],
+}
+
+# Carrinho de compras
+carrinho = []
+
+# Funções do sistema
+def exibir_categorias():
+    print("\nCategorias disponíveis:")
+    for i, categoria in enumerate(loja.keys(), start=1):
+        print(f"{i}. {categoria}")
+
+def exibir_produtos(categoria):
+    print(f"\nProdutos em {categoria}:")
+    produtos = loja[categoria]
+    for i, produto in enumerate(produtos, start=1):
+        print(f"{i}. {produto['nome']} - Tamanhos: {produto['tamanho']} - R$ {produto['preco']:.2f}")
+
+def adicionar_ao_carrinho(categoria, produto_index):
+    produto = loja[categoria][produto_index - 1]
+    carrinho.append(produto)
+    print(f"\n'{produto['nome']}' foi adicionado ao carrinho.")
+
+def exibir_carrinho():
+    if not carrinho:
+        print("\nSeu carrinho está vazio.")
+    else:
+        print("\nItens no seu carrinho:")
+        total = 0
+        for i, item in enumerate(carrinho, start=1):
+            print(f"{i}. {item['nome']} - R$ {item['preco']:.2f}")
+            total += item['preco']
+        print(f"\nTotal: R$ {total:.2f}")
+
+def finalizar_compra():
+    if not carrinho:
+        print("\nSeu carrinho está vazio. Adicione itens antes de finalizar a compra.")
+    else:
+        exibir_carrinho()
+        print("\nCompra finalizada! Obrigado por comprar na Loja Veste Bem!")
+        carrinho.clear()
+
+# Sistema principal
+while True:
+    print("\nBem-vindo à Loja Veste Bem!")
+    print("1. Ver categorias de roupas")
+    print("2. Ver carrinho")
+    print("3. Finalizar compra")
+    print("4. Sair")
+    
+    opcao = input("\nEscolha uma opção: ")
+    
+    if opcao == "1":
+        exibir_categorias()
+        try:
+            escolha_categoria = int(input("\nEscolha uma categoria (número): "))
+            categorias = list(loja.keys())
+            categoria_selecionada = categorias[escolha_categoria - 1]
+            exibir_produtos(categoria_selecionada)
+            
+            escolha_produto = int(input("\nEscolha um produto para adicionar ao carrinho (número): "))
+            adicionar_ao_carrinho(categoria_selecionada, escolha_produto)
+        except (ValueError, IndexError):
+            print("\nOpção inválida. Tente novamente.")
+    
+    elif opcao == "2":
+        exibir_carrinho()
+    
+    elif opcao == "3":
+        finalizar_compra()
+    
+    elif opcao == "4":
+        print("\nObrigado por visitar a Loja Veste Bem. Até logo!")
+        break
+    
+    else:
+        print("\nOpção inválida. Tente novamente.")
