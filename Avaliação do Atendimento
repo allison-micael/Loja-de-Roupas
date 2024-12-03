@@ -1,0 +1,68 @@
+class AvaliacaoAtendimentoLoja: 
+    def __init__(self): 
+        self.avaliacoes = []
+    
+    def exibir_instrucoes(self): 
+        print("\nPor favor,  avalie o atendimento da nossa loja: ")
+        print("1 - Péssimo")
+        print("2 - Ruim")
+        print("3 - Regular")
+        print("4 - Bom")
+        print("5 - Excelente")
+
+    def adicionar_avaliacao(self,  estrelas,  comentario=""): 
+        if 1 <= estrelas <= 5: 
+            self.avaliacoes.append({"estrelas":  estrelas,  "comentario":  comentario})
+            print(f"\nObrigado! Você avaliou o atendimento com {estrelas} estrela(s).")
+            if comentario: 
+                print(f"Comentário registrado:  {comentario}")
+        else: 
+            print("\nAvaliação inválida! Por favor,  forneça uma nota entre 1 e 5.")
+
+    def calcular_media_avaliacao(self): 
+        if self.avaliacoes: 
+            total_estrelas = sum(avaliacao["estrelas"] for avaliacao in self.avaliacoes)
+            media = total_estrelas / len(self.avaliacoes)
+            return round(media,  2)
+        else: 
+            return 0.0
+
+    def exibir_avaliacoes(self): 
+        if self.avaliacoes: 
+            print("\nAvaliações recebidas: ")
+            for idx,  avaliacao in enumerate(self.avaliacoes,  1): 
+                print(f"{idx}. {avaliacao['estrelas']} estrela(s) - {avaliacao['comentario']}")
+            media = self.calcular_media_avaliacao()
+            print(f"\nMédia das avaliações:  {media} estrela(s)")
+            print(f"Total de avaliações:  {len(self.avaliacoes)}")
+        else: 
+            print("\nAinda não há avaliações registradas.")
+
+def iniciar_sistema_avaliacao(): 
+    loja = AvaliacaoAtendimentoLoja()
+    
+    while True: 
+        print("\nMenu de Avaliação do Atendimento: ")
+        print("1. Avaliar o atendimento")
+        print("2. Ver todas as avaliações")
+        print("3. Sair")
+        
+        opcao = input("Escolha uma opção (1/2/3):  ")
+        
+        if opcao == "1": 
+            loja.exibir_instrucoes()
+            try: 
+                estrelas = int(input("Quantas estrelas você dá para o atendimento (1-5)? "))
+                comentario = input("Gostaria de adicionar um comentário? (Aperte Enter para pular):  ")
+                loja.adicionar_avaliacao(estrelas,  comentario)
+            except ValueError: 
+                print("Por favor,  insira um número válido para a avaliação.")
+        elif opcao == "2": 
+            loja.exibir_avaliacoes()
+        elif opcao == "3": 
+            print("Obrigado por participar da avaliação! Até logo!")
+            break
+        else: 
+            print("Opção inválida! Tente novamente.")
+
+iniciar_sistema_avaliacao()
